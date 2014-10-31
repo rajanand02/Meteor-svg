@@ -1,0 +1,40 @@
+<head>
+  <title>svg-demo</title>
+</head>
+
+<body>
+  <h1>Welcome to SVG-demo</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  {{#each collections}}
+    <svg width="540" height="280"  id="{{_id}}" xmlns="http://www.w3.org/2000/svg">
+     <g>
+      <title>Layer 1</title>
+      <polyline points="276,103 " cx="30" opacity="0.5" stroke-linecap="round" stroke-width="5" stroke="#000000" fill="none">
+     <animate attributeName="x" from="0" to="200" dur="3s" fill="freeze"/>
+
+      </polyline>
+      <rect id="svg_3" height="148" width="419" y="80" x="96" stroke-width="5" stroke="#ede6e6" fill="#00ffff"/>
+      <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="14" id="svg_4" y="113" x="300" stroke-width="0" stroke="#000000" fill="#000000">{{name}}</text>
+      <a xlink:href="{{url}}" target="_blank" ><text  xml:space="preserve" text-anchor="middle" font-family="serif" font-size="14" id="svg_5" y="169" x="334" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#000000">{{url}}</text></a>
+     </g>
+    </svg>
+  {{/each}}
+{{#each widgets}}
+  <svg width="540" height="280"  id="{{_id}}" xmlns="http://www.w3.org/2000/svg">
+   <g>
+    <title>Layer 1</title>
+    <polyline points="276,103 " cx="30" opacity="0.5" stroke-linecap="round" stroke-width="5" stroke="#000000" fill="red">
+   <animate attributeName="x" from="0" to="200" dur="3s" fill="freeze"/>
+
+    </polyline>
+    <rect id="svg_3" height="148" width="419" y="80" x="96" stroke-width="5" stroke="#ede6e6" fill="#FFF286"/>
+    <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="14" id="svg_4" y="113" x="300" stroke-width="0" stroke="#000000" fill="#000000">{{name}}</text>
+    <a xlink:href="{{url}}" target="_blank" ><text  xml:space="preserve" text-anchor="middle" font-family="serif" font-size="14" id="svg_5" y="169" x="334" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#000000">{{url}}</text></a>
+   </g>
+  </svg>
+{{/each}}
+</template>
